@@ -1,0 +1,47 @@
+{
+  "extends": [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:meteor/recommended",
+    "plugin:react/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 8,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "meteor",
+    "react"
+  ],
+  "rules": {
+    "import/extensions": [
+      "off",
+      "never"
+    ],
+    "import/no-extraneous-dependencies": 0,
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "_id"
+        ]
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": "meteor"
+  }
+}

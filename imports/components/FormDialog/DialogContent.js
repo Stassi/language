@@ -23,14 +23,11 @@ function DialogContent({
 }) {
   return (
     <DialogContentMaterial>
-      {description
-        ? (
-          <DialogContentText>
-            {description}
-          </DialogContentText>
-        )
-        : null
-      }
+      {description && (
+        <DialogContentText>
+          {description}
+        </DialogContentText>
+      )}
 
       <form
         autoComplete="off"

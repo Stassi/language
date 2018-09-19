@@ -4,12 +4,12 @@ import {
   AppBar,
   FloatingActionButton,
   FormDialog,
+  Snackbar,
 } from '../components';
 import './fonts/Roboto.css';
 
 // TODO: Remove placeholders
 const emptyArray = [];
-const F = () => false;
 const noOp = () => {};
 
 export default function App() {
@@ -24,12 +24,17 @@ export default function App() {
         }}
       />
 
-      <FormDialog
-        {...{
-          button: <FloatingActionButton moveUp={F()} />,
-          notify: noOp,
-        }}
-      />
+      <Snackbar>
+        {({ notify, open }) => (
+          <FormDialog
+            {...{
+              notify,
+              button: <FloatingActionButton moveUp={open} />,
+              dialogTitle: 'Add source text',
+            }}
+          />
+        )}
+      </Snackbar>
     </Fragment>
   );
 }

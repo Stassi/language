@@ -5,6 +5,7 @@ import {
   CheckboxList,
   FloatingActionButton,
   FormDialog,
+  PaperSheet,
   Snackbar,
 } from '../components';
 import './fonts/Roboto.css';
@@ -14,24 +15,26 @@ export default function App() {
     <Fragment>
       <CssBaseline />
 
-      <CheckboxList>
-        {({ deselect, selected }) => (
-          <AppBar
-            {...{
-              selected,
-              handleClicked: key => ({
-                deselect,
-                action: () => {
-                  // TODO: Implement
-                  // eslint-disable-next-line no-console
-                  console.log({ action: true });
-                },
-              })[key],
-              title: 'Sources',
-            }}
-          />
-        )}
-      </CheckboxList>
+      <PaperSheet moveDown>
+        <CheckboxList>
+          {({ deselect, selected }) => (
+            <AppBar
+              {...{
+                selected,
+                handleClicked: key => ({
+                  deselect,
+                  action: () => {
+                    // TODO: Implement
+                    // eslint-disable-next-line no-console
+                    console.log({ action: true });
+                  },
+                })[key],
+                title: 'Sources',
+              }}
+            />
+          )}
+        </CheckboxList>
+      </PaperSheet>
 
       <Snackbar>
         {({ notify, open }) => (

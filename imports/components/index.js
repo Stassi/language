@@ -1,4 +1,7 @@
 import AppBar from './AppBar';
+import FloatingActionButton from './FloatingActionButton';
 
-// eslint-disable-next-line import/prefer-default-export
-export { AppBar };
+export {
+  AppBar,
+  FloatingActionButton,
+};

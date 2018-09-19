@@ -2,27 +2,36 @@ import React, { Fragment } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {
   AppBar,
+  CheckboxList,
   FloatingActionButton,
   FormDialog,
   Snackbar,
 } from '../components';
 import './fonts/Roboto.css';
 
-// TODO: Remove placeholders
-const emptyArray = [];
-const noOp = () => {};
-
 export default function App() {
   return (
     <Fragment>
       <CssBaseline />
 
-      <AppBar
-        {...{
-          handleClicked: noOp,
-          selected: emptyArray,
-        }}
-      />
+      <CheckboxList>
+        {({ deselect, selected }) => (
+          <AppBar
+            {...{
+              selected,
+              handleClicked: key => ({
+                deselect,
+                action: () => {
+                  // TODO: Implement
+                  // eslint-disable-next-line no-console
+                  console.log({ action: true });
+                },
+              })[key],
+              title: 'Sources',
+            }}
+          />
+        )}
+      </CheckboxList>
 
       <Snackbar>
         {({ notify, open }) => (

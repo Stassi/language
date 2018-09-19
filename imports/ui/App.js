@@ -3,11 +3,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import {
   AppBar,
   FloatingActionButton,
+  FormDialog,
 } from '../components';
 import './fonts/Roboto.css';
 
 // TODO: Remove placeholders
 const emptyArray = [];
+const F = () => false;
 const noOp = () => {};
 
 export default function App() {
@@ -17,12 +19,17 @@ export default function App() {
 
       <AppBar
         {...{
-          selected: emptyArray,
           handleClicked: noOp,
+          selected: emptyArray,
         }}
       />
 
-      <FloatingActionButton />
+      <FormDialog
+        {...{
+          button: <FloatingActionButton moveUp={F()} />,
+          notify: noOp,
+        }}
+      />
     </Fragment>
   );
 }

@@ -1,14 +1,22 @@
 import React, { Fragment } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { AppBar } from '../components';
 import './fonts/Roboto.css';
+
+// TODO: Remove placeholders
+const emptyArray = [];
+const noOp = () => {};
 
 export default function App() {
   return (
     <Fragment>
       <CssBaseline />
-      <h1>
-        Hello world!
-      </h1>
+      <AppBar
+        {...{
+          selected: emptyArray,
+          handleClicked: noOp,
+        }}
+      />
     </Fragment>
   );
 }

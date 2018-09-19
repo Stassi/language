@@ -7,7 +7,9 @@ import {
   FormDialog,
   PaperSheet,
   Snackbar,
+  Sources,
 } from '../components';
+import sourcesToCollection from './sourcesToCollection';
 import './fonts/Roboto.css';
 
 export default function App() {
@@ -15,26 +17,30 @@ export default function App() {
     <Fragment>
       <CssBaseline />
 
-      <PaperSheet moveDown>
-        <CheckboxList>
-          {({ deselect, selected }) => (
-            <AppBar
-              {...{
-                selected,
-                handleClicked: key => ({
-                  deselect,
-                  action: () => {
-                    // TODO: Implement
-                    // eslint-disable-next-line no-console
-                    console.log({ action: true });
-                  },
-                })[key],
-                title: 'Sources',
-              }}
-            />
-          )}
-        </CheckboxList>
-      </PaperSheet>
+      <Sources>
+        {sources => (
+          <PaperSheet moveDown>
+            <CheckboxList collection={sourcesToCollection(sources)}>
+              {({ deselect, selected }) => (
+                <AppBar
+                  {...{
+                    selected,
+                    handleClicked: key => ({
+                      deselect,
+                      action: () => {
+                        // TODO: Implement
+                        // eslint-disable-next-line no-console
+                        console.log({ action: true });
+                      },
+                    })[key],
+                    title: 'Sources',
+                  }}
+                />
+              )}
+            </CheckboxList>
+          </PaperSheet>
+        )}
+      </Sources>
 
       <Snackbar>
         {({ notify, open }) => (

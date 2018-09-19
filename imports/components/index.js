@@ -4,6 +4,7 @@ import FloatingActionButton from './FloatingActionButton';
 import FormDialog from './FormDialog';
 import PaperSheet from './PaperSheet';
 import Snackbar from './Snackbar';
+import Sources from './Sources';
 
 export {
   AppBar,
@@ -12,4 +13,5 @@ export {
   FormDialog,
   PaperSheet,
   Snackbar,
+  Sources,
 };

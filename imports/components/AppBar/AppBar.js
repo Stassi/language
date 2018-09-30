@@ -42,7 +42,9 @@ function AppBar({
   },
 }) {
   const selectedCount = selected.length;
-  const displayIfAnySelected = selectedCount || displayNone;
+  const displayIfAnySelected = selectedCount
+    ? null
+    : displayNone;
 
   return (
     <div className={root}>
